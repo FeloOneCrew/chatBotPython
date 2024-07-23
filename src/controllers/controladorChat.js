@@ -1,23 +1,34 @@
+let url = "http://localhost:8000/asegurachat"
+let peticion = {
+    method: "GET"
+}
+
+fetch(url, peticion)
+.then(function(respuesta){
+    return respuesta.json()
+})
+
+.then(function(respuesta){
+    console.log(respuesta)
+})
+
+
+.catch(function(respuesta){
+    console.log(respuesta)
+})
+
 let botonSend = document.getElementById("botonSend")
 let textoChat = document.getElementById("textoChat")
 let mensajesChat = document.getElementById("mensajeChat")
 
-let preguntas = [
-    "¿Cúal es tu nombre?",
-    "¿Cuantos años tienes?",
-    "¿Cúal es tu pelicula favorita?",
-    "¿Tienes mascotas?",
-    "¿Cuál es tu hobbie?"
-]
+//mapear el arreglo de preguntar y el arreglo de respuestas
+let preguntas = respuesta.map(function(pregunta){
+    return pregunta.pregunta
+})
 
-let respuestas = [
-    "Hola, mi nombre es Leonardo", 
-    "Tengo 1 año" , 
-    "Revolver", 
-    "si", 
-    "Jugar tenis de mesa"
-]
-
+let answers = respuesta.map(function(answer){
+    return answer.respuesta
+})
 // variable para contar el numero de preguntas
 
 let indicePregunta = 0
@@ -50,3 +61,6 @@ textoChat.addEventListener("keypress", function(evento){
 
     }
 })
+
+console.log(preguntas)
+console.log(answers)

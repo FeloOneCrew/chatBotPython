@@ -50,3 +50,12 @@
     bottom: 0;
     width: 95%;
 }
+
+.usuarios {
+    max-height: 500px;
+}
+
+.noticia {
+    width: 300px;
+    height: 200px;
+}
