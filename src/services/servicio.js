@@ -37,8 +37,8 @@ fetch(url, peticion)
         }else{
             let numeroPregunta = parseInt(escribeUsuario)-1
             if(numeroPregunta>=0 && numeroPregunta<preguntas.length){
-                mensajesChat.innerHTML+=`<p class = "text-star"> ${preguntas[numeroPregunta]}</p>`
-                mensajesChat.innerHTML+=`<p class = "text-star"> ${answers[numeroPregunta]}</p>`
+                mensajesChat.innerHTML+=`<p class = "text-start"> ${preguntas[numeroPregunta]}</p>`
+                mensajesChat.innerHTML+=`<p class = "text-end text-primary fw-bold"> ${answers[numeroPregunta]}</p>`
             }else{
                 mensajesChat.innerHTML+=`<p class = "text-star"> Por favor ingrese una opcion válida</p>`
             }

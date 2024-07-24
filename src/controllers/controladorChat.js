@@ -40,12 +40,12 @@ function procesarEntradaChat(){
     textoChat.value=""
     if(escribeUsuario == "hola"){
         let listaPreguntas = preguntas.map((pregunta, index)=>`${index + 1}. ${pregunta}`).join('<br>')
-        mensajesChat.innerHTML+=`<p class = "text-star">Hola Bienvenido <br> ${listaPreguntas}</p>`
+        mensajesChat.innerHTML+=`<p class = "text-star fw-bold">Hola Bienvenido <br> ${listaPreguntas}</p>`
     }else{
         let numeroPregunta = parseInt(escribeUsuario)-1
         if(numeroPregunta>=0 && numeroPregunta<preguntas.length){
             mensajesChat.innerHTML+=`<p class = "text-star"> ${preguntas[numeroPregunta]}</p>`
-            mensajesChat.innerHTML+=`<p class = "text-star"> ${respuestas[numeroPregunta]}</p>`
+            mensajesChat.innerHTML+=`<p class = "text-end text-primary fw-bold"> ${respuestas[numeroPregunta]}</p>`
         }else{
             mensajesChat.innerHTML+=`<p class = "text-star"> Por favor ingrese una opcion válida</p>`
         }
